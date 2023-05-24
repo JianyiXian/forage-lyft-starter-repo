@@ -1,4 +1,5 @@
 from abc import ABC
+from datetime import datetime
 
 
 class Battery(ABC):
@@ -6,5 +7,5 @@ class Battery(ABC):
         self.last_service_date = last_service_date
         self.current_date = current_date
 
-    def needs_service(self, year):
-        return self.current_date - self.last_service_date > year
+    def needs_service(self, max_year):
+        return self.current_date.year - self.last_service_date.year > max_year
