@@ -2,5 +2,9 @@ from engine.engine import Engine
 
 
 class WilloughbyEngine(Engine):
-    def engine_should_be_serviced(self, max_mileage=60000):
-        return super().needs_service(max_mileage)
+    def __init__(self, last_service_mileage, current_milage):
+        self.last_service_mileage = last_service_mileage
+        self.current_milage = current_milage
+
+    def needs_service(self):
+        return self.current_milage - self.last_service_mileage > 60000

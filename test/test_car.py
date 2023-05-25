@@ -3,7 +3,6 @@ import unittest
 
 from car_factory import CarFactory
 
-
 class TestCalliope(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         today = datetime.today().date()
